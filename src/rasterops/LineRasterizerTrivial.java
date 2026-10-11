@@ -2,6 +2,13 @@ package rasterops;
 
 import rasterdata.Raster;
 
+/**
+ * Triviálny algoritmus pre rasterizáciu úsečky (y = k * x + q).
+ * Výhody: jednoduchá a priamočiara implementácia.
+ * Nevýhody: využíva operácie s desatinnými číslami (double) a zaokrúhľovanie (Math.round),
+ * čo je pomalšie ako celočíselné algoritmy (napr. Bresenhamov algoritmus).
+ */
+
 public class LineRasterizerTrivial implements LineRasterizer {
 
     @Override
