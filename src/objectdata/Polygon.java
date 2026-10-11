@@ -31,6 +31,13 @@ public class Polygon {
         return new Polygon(newPoints);
     }
 
+    public Polygon withoutPoint(final int index) {
+        if (index < 0 || index >= points.size()) return this;
+        final List<Point> newPoints = new ArrayList<>(this.points);
+        newPoints.remove(index);
+        return new Polygon(newPoints);
+    }
+
     public Polygon withPointInsertedAfter(final int index, final Point newPoint) {
         if (points.size() < 2 || index < 0 || index >= points.size()) {
             return withPoint(newPoint);

@@ -83,6 +83,13 @@ public class Canvas {
                 } else if (SwingUtilities.isRightMouseButton(e) && !drawingLines) {
                     selectedPointIndex = polygon.findClosestPointIndex(mouse);
                 }
+                else if (SwingUtilities.isMiddleMouseButton(e) && !drawingLines) {
+                    int closest = polygon.findClosestPointIndex(mouse);
+                    polygon = polygon.withoutPoint(closest);
+                    image.clear(0);
+                    render();
+                    panel.repaint();
+                }
             }
 
             @Override
